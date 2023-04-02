@@ -124,26 +124,25 @@ class HomePage extends ConsumerWidget {
                width: double.infinity,
                child: weatherState.isLoading ? Center(child: CircularProgressIndicator()) :
                    weatherState.errorMessage.isNotEmpty ? Center(child: Text(weatherState.errorMessage, style: errorMessageStyle,)) :
-                   Column(
-                     crossAxisAlignment: CrossAxisAlignment.start,
-                     children: [
-                       SizedBox(height: 50,),
-                       Text(weatherState.weatherData.location, style: locationStyle,),
-                       SizedBox(height: 10,),
-                       Row(
-                         children: [
-                           Text(weatherState.weatherData.conditionText, style: conditionTextStyle, overflow: TextOverflow.ellipsis,),
-                           CachedNetworkImage(
-                             imageUrl: weatherState.weatherData.iconUrl,
-                             placeholder: (context, url) => const CircularProgressIndicator(),
-                             errorWidget: (context, url, error) => const Icon(Icons.error),
-                           ),
-                         ],
-                       ),
-                       SizedBox(height: 10,),
-                       Text(weatherState.weatherData.temp, style: tempStyle,),
-                       SizedBox(height: 10,),
-                     ],
+                  SingleChildScrollView(
+                    scrollDirection: Axis.vertical,
+                     child: Column(
+                       crossAxisAlignment: CrossAxisAlignment.start,
+                       children: [
+                         SizedBox(height: 50,),
+                         Text(weatherState.weatherData.location, style: locationStyle,),
+                         SizedBox(height: 10,),
+                         Text(weatherState.weatherData.conditionText, style: conditionTextStyle,),
+                         CachedNetworkImage(
+                           imageUrl: weatherState.weatherData.iconUrl,
+                           placeholder: (context, url) => const CircularProgressIndicator(),
+                           errorWidget: (context, url, error) => const Icon(Icons.error),
+                         ),
+                         SizedBox(height: 10,),
+                         Text(weatherState.weatherData.temp, style: tempStyle,),
+                         SizedBox(height: 10,),
+                       ],
+                     ),
                    ),
 
 
