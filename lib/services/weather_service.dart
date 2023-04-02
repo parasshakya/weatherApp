@@ -29,12 +29,11 @@ class WeatherService{
 
   }
 
-
   static Future<Either<String, Weather>> getWeatherFromLongLat({required String long, required String lat}) async{
     try{
       final response = await dio.get(Api.apiEndPoint, queryParameters: {
         'key' : '510596c1a5f04d1c81c104433232903',
-        'q' : '$long,$lat'
+        'q' : '$lat,$long'
       });
 
       final weather = Weather.fromJson(response.data);

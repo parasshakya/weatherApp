@@ -12,6 +12,7 @@ import 'package:google_fonts/google_fonts.dart';
     fontSize: 50,
     color: Colors.lightGreenAccent,
     fontWeight: FontWeight.w500,
+
   );
 
 final TextStyle tempStyle = GoogleFonts.lato(

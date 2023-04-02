@@ -9,7 +9,7 @@ static Future<Position> getCurrentPosition() async{
       await Geolocator.requestPermission();
   }
     Position currentPosition = await Geolocator.getCurrentPosition(
-      desiredAccuracy: LocationAccuracy.best
+      desiredAccuracy: LocationAccuracy.high
     );
   return currentPosition;
 }

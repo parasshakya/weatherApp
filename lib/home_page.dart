@@ -94,7 +94,6 @@ class HomePage extends ConsumerWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-
                   ElevatedButton(onPressed: (){
                         position.then((value) => ref.read(weatherProvider.notifier).getWeatherFromLongLat(long: value.longitude.toString(), lat: value.latitude.toString()));
                   }, style: ElevatedButton.styleFrom(
@@ -133,7 +132,7 @@ class HomePage extends ConsumerWidget {
                        SizedBox(height: 10,),
                        Row(
                          children: [
-                           Text(weatherState.weatherData.conditionText, style: conditionTextStyle,),
+                           Text(weatherState.weatherData.conditionText, style: conditionTextStyle, overflow: TextOverflow.ellipsis,),
                            CachedNetworkImage(
                              imageUrl: weatherState.weatherData.iconUrl,
                              placeholder: (context, url) => const CircularProgressIndicator(),
