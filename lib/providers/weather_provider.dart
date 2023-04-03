@@ -22,7 +22,7 @@ class WeatherNotifier extends StateNotifier<WeatherState>{
         });
 
   }
-  Future<void> getWeatherFromLongLat({required String long, required String lat}) async{
+  Future<void> getWeatherFromLongLat({required String long, required String lat}) async {
 
     state = state.copyWith(isLoading: true, errorMessage: '');
     final response = await WeatherService.getWeatherFromLongLat(long: long, lat: lat);

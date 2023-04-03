@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
     return  MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Weather App',
-      home: show ? const HelpScreen() :  HomePage(),
+      home: show ? const HelpScreen() :  const HomePage(),
     );
   }
 }
