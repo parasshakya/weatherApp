@@ -67,7 +67,7 @@ class _HomePageState extends ConsumerState<HomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: 50,),
+              const SizedBox(height: 50,),
 
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10.0),
@@ -100,7 +100,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                   ),
                 ),
               ),
-              SizedBox(height: 20,),
+              const SizedBox(height: 20,),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10.0),
                 child: Align(
@@ -123,8 +123,8 @@ class _HomePageState extends ConsumerState<HomePage> {
               SizedBox(height: 20,),
               Expanded(
                 child: Container(
-                  padding:const  EdgeInsets.all(10),
                   color: Colors.red,
+                  padding:const  EdgeInsets.all(10),
                   width: double.infinity,
                   child: weatherState.isLoading ? const Center(
                       child: SizedBox(
@@ -144,10 +144,10 @@ class _HomePageState extends ConsumerState<HomePage> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(height: 50,),
+                        const SizedBox(height: 50,),
                         Text(weatherState.weatherData.location,
                           style: locationStyle,),
-                        SizedBox(height: 10,),
+                       const SizedBox(height: 10,),
                         Text(weatherState.weatherData.conditionText,
                           style: conditionTextStyle,),
                         CachedNetworkImage(
@@ -157,9 +157,9 @@ class _HomePageState extends ConsumerState<HomePage> {
                           errorWidget: (context, url, error) =>
                           const Icon(Icons.error),
                         ),
-                        SizedBox(height: 10,),
+                        const SizedBox(height: 10,),
                         Text(weatherState.weatherData.temp, style: tempStyle,),
-                        SizedBox(height: 10,),
+                        const SizedBox(height: 10,),
                       ],
                     ),
                   ),
